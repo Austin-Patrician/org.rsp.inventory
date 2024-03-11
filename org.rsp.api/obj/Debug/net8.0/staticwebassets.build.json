@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ZlmH7RniMWQ45OBu6d55OShzpkjzGIpUAfANXNOLnbY=",
+  "Source": "org.rsp.api",
+  "BasePath": "_content/org.rsp.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

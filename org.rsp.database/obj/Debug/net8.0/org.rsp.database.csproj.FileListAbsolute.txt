@@ -1,0 +1,14 @@
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\bin\Debug\net8.0\org.rsp.database.deps.json
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\bin\Debug\net8.0\org.rsp.database.runtimeconfig.json
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\bin\Debug\net8.0\org.rsp.database.dll
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\bin\Debug\net8.0\org.rsp.database.pdb
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\org.rsp.database.csproj.AssemblyReference.cache
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\org.rsp.database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\org.rsp.database.AssemblyInfoInputs.cache
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\org.rsp.database.AssemblyInfo.cs
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\org.rsp.database.csproj.CoreCompileInputs.cache
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\org.rsp.database.dll
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\refint\org.rsp.database.dll
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\org.rsp.database.pdb
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\org.rsp.database.genruntimeconfig.cache
+C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.database\obj\Debug\net8.0\ref\org.rsp.database.dll

@@ -40,7 +40,7 @@ public class GoodsManager : IGoodsManager, ITransient
     /// batch delete goods
     /// </summary>
     /// <param name="ids"></param>
-    public async Task<bool> BatchDelGoodsCategoryAsync(List<int> ids)
+    public async Task<bool> BatchDelGoodsAsync(List<int> ids)
     {
         try
         {

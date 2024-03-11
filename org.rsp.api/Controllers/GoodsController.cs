@@ -39,8 +39,8 @@ public class GoodsController : ApiBaseController
     }
     
     [HttpPost]
-    public async Task<bool> DelGoodsCategory(List<int> ids)
+    public async Task<bool> DelGoods(List<int> ids)
     {
-        return await _goodsManager.BatchDelGoodsCategoryAsync(ids);
+        return await _goodsManager.BatchDelGoodsAsync(ids);
     }
 }

@@ -9,13 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5082496f-2664-4f42-9083-010815d7fe60" name="Changes" comment="fix the sql bind error.">
+    <list default="true" id="5082496f-2664-4f42-9083-010815d7fe60" name="Changes" comment="add the other else.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.org.rsp.base/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.org.rsp.base/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.management.dll" afterDir="false" />
@@ -24,54 +22,20 @@
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/ref/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/ref/org.rsp.api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/refint/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/refint/org.rsp.api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/org.rsp.api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/org.rsp.api.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/org.rsp.api.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/org.rsp.api.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/DbContext/InventoryDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/DbContext/InventoryDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/Migrations/InventoryDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/Migrations/InventoryDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/Table/Record.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/Table/Record.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/Table/WareHouseRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/Table/WareHouseRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/bin/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/bin/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/bin/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/bin/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/ref/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/ref/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/refint/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/refint/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/org.rsp.database.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/org.rsp.database.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/org.rsp.database.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/org.rsp.database.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.entity/Request/AddRecordRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/Request/AddRecordRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/ref/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/ref/org.rsp.entity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/refint/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/refint/org.rsp.entity.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/org.rsp.entity.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/org.rsp.entity.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/org.rsp.entity.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/org.rsp.entity.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.management/Manager/RecordManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/Manager/RecordManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.management.dll" afterDir="false" />
@@ -79,17 +43,10 @@
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/ref/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/ref/org.rsp.management.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/refint/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/refint/org.rsp.management.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/org.rsp.management.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/org.rsp.management.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/org.rsp.management.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/org.rsp.management.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +165,7 @@
       <workItem from="1709860681884" duration="17000" />
       <workItem from="1709860707739" duration="7246000" />
       <workItem from="1709873715768" duration="24873000" />
-      <workItem from="1710136085650" duration="6892000" />
+      <workItem from="1710136085650" duration="7924000" />
     </task>
     <task id="LOCAL-00001" summary="fix the sql bind error.">
       <option name="closed" value="true" />
@@ -218,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710144218176</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add the other else.">
+      <option name="closed" value="true" />
+      <created>1710146557447</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710146557447</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +207,8 @@
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fix the sql bind error." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the sql bind error." />
+    <MESSAGE value="add the other else." />
+    <option name="LAST_COMMIT_MESSAGE" value="add the other else." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -417,32 +383,6 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/org.rsp.management/Manager/RecordManager.cs</url>
-          <line>143</line>
-          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\RecordManager.cs" initialLine="143" containingFunctionPresentation="Method 'DelRecord'">
-            <startOffsets>
-              <option value="4581" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4626" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/org.rsp.management/Manager/RecordManager.cs</url>
-          <line>139</line>
-          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\RecordManager.cs" initialLine="139" containingFunctionPresentation="Method 'DelRecord'">
-            <startOffsets>
-              <option value="4513" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4528" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/org.rsp.api/Controllers/RecordController.cs</url>
           <line>49</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.api\Controllers\RecordController.cs" initialLine="49" containingFunctionPresentation="Method 'DelGoodsCategory'">
@@ -467,6 +407,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/org.rsp.management/Manager/RecordManager.cs</url>
+          <line>70</line>
+          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\RecordManager.cs" initialLine="70" containingFunctionPresentation="Method 'AddWareHouseRecordAsync'">
+            <startOffsets>
+              <option value="1988" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2041" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/org.rsp.api/Controllers/GoodsController.cs</url>
+          <line>43</line>
+          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.api\Controllers\GoodsController.cs" initialLine="43" containingFunctionPresentation="Method 'DelGoodsCategory'">
+            <startOffsets>
+              <option value="1116" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1175" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

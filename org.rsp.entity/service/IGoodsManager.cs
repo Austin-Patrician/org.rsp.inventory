@@ -7,7 +7,7 @@ public interface IGoodsManager
 {
     Task<List<Goods>> QueryGoodsAsync();
 
-    Task<bool> BatchDelGoodsCategoryAsync(List<int> ids);
+    Task<bool> BatchDelGoodsAsync(List<int> ids);
 
     Task<bool> UpdateGoodsAsync(UpdateGoodsRequest request);
     

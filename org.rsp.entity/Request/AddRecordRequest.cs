@@ -12,6 +12,9 @@ public class AddRecordRequest
     [Required]
     public int GoodsId { get; set; }
     
+    [Required]
+    public string GoodsName { get; set; }
+    
     //数量
     [Range(1, int.MaxValue, ErrorMessage = "The value must be greater than or equal to 0")]
     public double Quantity { get; set; }

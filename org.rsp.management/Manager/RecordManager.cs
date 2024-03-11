@@ -74,7 +74,7 @@ public class RecordManager : IRecordManager, ITransient
                 {
                     //先查询
                     var everGoods = await _wrapper.GoodsRepository.FindByCondition(_ =>
-                        _.GoodsId == record.GoodsId && _.StoreHouseId == record.StoreHouseId).FirstOrDefaultAsync();
+                        _.GoodsName == record.GoodsName && _.StoreHouseId == record.StoreHouseId).FirstOrDefaultAsync();
                     //分流水方向
                     if (record.Direction == 0)
                     {
@@ -91,13 +91,11 @@ public class RecordManager : IRecordManager, ITransient
                             var newGoods = await _wrapper.GoodsRepository.FindByCondition(_ =>
                                 _.GoodsId == record.GoodsId).FirstOrDefaultAsync();
 
-                            var temp = JsonConvert.SerializeObject(newGoods);
-                            var addGoods = JsonConvert.DeserializeObject<Goods>(temp);
+                            newGoods.GoodsId = 0;
+                            newGoods!.StoreHouseId = record.StoreHouseId;
+                            newGoods.Number = record.Quantity;
 
-                            addGoods!.StoreHouseId = record.StoreHouseId;
-                            addGoods.Number = record.Quantity;
-
-                            _wrapper.GoodsRepository.Create(addGoods);
+                            _wrapper.GoodsRepository.Create(newGoods);
                         }
                     }
                     else

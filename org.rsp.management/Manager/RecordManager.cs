@@ -142,6 +142,6 @@ public class RecordManager : IRecordManager, ITransient
 
         //logic delete
         var bindInSql = SqlBindHelper.BindInSql(ids);
-        await _wrapper.ExecuteSqlRaw($"update [teest].[dbo].[Records] set is_delete =1 where RecordId in ({bindInSql}) " );
+        await _wrapper.ExecuteSqlRaw($"update [teest].[dbo].[Records] set IsDeleted =1 where RecordId in ({bindInSql}) " );
     }
 }

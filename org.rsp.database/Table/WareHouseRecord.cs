@@ -7,5 +7,4 @@ public class WareHouseRecord : BaseTable
     //供应商名字
     public string SupplierName { get; set; }
     
-    public ICollection<Record> GoodsCollection { get; set; }
 }

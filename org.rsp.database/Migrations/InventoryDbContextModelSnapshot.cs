@@ -127,15 +127,14 @@ namespace org.rsp.database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RecordId"));
 
-                    b.Property<string>("CreateBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<byte>("Direction")
                         .HasColumnType("tinyint");
 
                     b.Property<int>("GoodsId")
                         .HasColumnType("int");
+
+                    b.Property<byte>("IsDeleted")
+                        .HasColumnType("tinyint");
 
                     b.Property<double>("Quantity")
                         .HasColumnType("float");
@@ -198,6 +197,42 @@ namespace org.rsp.database.Migrations
                     b.HasKey("StoreHouseId");
 
                     b.ToTable("StoreHouses");
+                });
+
+            modelBuilder.Entity("org.rsp.database.Table.WareHouseRecord", b =>
+                {
+                    b.Property<int>("WareHouseRecordId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WareHouseRecordId"));
+
+                    b.Property<string>("CreateBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SupplierName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UpdateBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("WareHouseRecordId");
+
+                    b.ToTable("WareHouseRecord");
                 });
 
             modelBuilder.Entity("org.rsp.database.Table.Goods", b =>

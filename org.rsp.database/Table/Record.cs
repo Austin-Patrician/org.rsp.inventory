@@ -24,11 +24,10 @@ public class Record
     //入库/出库时间
     public DateTime TradeTime { get; set; }
     
-    //创建人
-    public string CreateBy { get; set; }
-    
     //用途：出库==》出库去向  入库==> 购买目的
     public string Use { get; set; }
+    
+    public byte IsDeleted { get; set; }
     
     public int WareHouseRecordId { get; set; }
 }

@@ -45,8 +45,8 @@ public class RecordController
     /// </summary>
     /// <param name="ids"></param>
     [HttpPost]
-    public async Task DelGoodsCategory(List<int> ids)
+    public async Task DelRecord(List<int> ids)
     {
-        await _recordManager.DelRecord(ids);
+        await _recordManager.DelRecordAsync(ids);
     }
 }

@@ -135,13 +135,13 @@ public class RecordManager : IRecordManager, ITransient
     /// 更新record
     /// </summary>
     /// <param name="ids"></param>
-    public async Task DelRecord(List<int> ids)
+    public async Task DelRecordAsync(List<int> ids)
     {
         if (!ids.Any())
             return;
 
         //logic delete
         var bindInSql = SqlBindHelper.BindInSql(ids);
-        await _wrapper.ExecuteSqlRaw("update Record set is_delete =1 where Id in ( @0 ) ", bindInSql);
+        await _wrapper.ExecuteSqlRaw($"update [teest].[dbo].[Records] set is_delete =1 where RecordId in ({bindInSql}) " );
     }
 }

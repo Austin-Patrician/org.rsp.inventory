@@ -9,7 +9,7 @@ public static class SqlBindHelper
         var builder = new StringBuilder();
         for (int i = 0; i < ids.Count; i++)
         {
-            if (i != ids.Count)
+            if (i != ids.Count -1)
             {
                 builder.Append(ids[i] + ",");
             }

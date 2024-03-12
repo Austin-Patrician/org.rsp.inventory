@@ -1,4 +1,5 @@
-﻿using org.rsp.entity.Request;
+﻿using org.rsp.database.Table;
+using org.rsp.entity.Request;
 
 namespace org.rsp.entity.service;
 
@@ -9,4 +10,6 @@ public interface IStoreHouseManager
     Task UpdateStoreHouseAsync(UpdateStoreHouseRequest request);
 
     Task BatchDeleteStoreHouseAsync(List<int> ids);
+
+    Task<List<StoreHouse>> QueryStoreHouseAsync(QueryStoreHouseByConditionRequest request);
 }

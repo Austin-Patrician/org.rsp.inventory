@@ -1,7 +1,10 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using NPOI.SS.Formula.Functions;
 using Org.BouncyCastle.Crypto;
+using org.rsp.database.Extensions;
 using org.rsp.database.Table;
 using org.rsp.entity.Request;
 using org.rsp.entity.service;
@@ -104,6 +107,45 @@ public class StoreHouseManager : IStoreHouseManager, ITransient
         catch (Exception e)
         {
             _logger.LogError($"BatchDeleteStoreHouseAsync error: {e.Message}");
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// 根据条件查询仓库
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
+    public async Task<List<StoreHouse>> QueryStoreHouseAsync(QueryStoreHouseByConditionRequest request)
+    {
+        try
+        {
+            //后续增加redis 缓存
+            
+            Expression<Func<StoreHouse, bool>> expression = ExpressionExtension.True<StoreHouse>();
+            if (!string.IsNullOrEmpty(request.StoreHouseName))
+            {
+                expression = expression.And(p => p.StoreHouseName.Contains(request.StoreHouseName));
+            }
+
+            if (!string.IsNullOrEmpty(request.Location))
+            {
+                expression = expression.And(p => p.Location != null && p.Location.Contains(request.Location));
+            }
+
+            if (request.StartCreateTime is not null && request.EndCreateTime is not null)
+            {
+                expression = expression.And(p =>
+                    p.CreateTime > request.StartCreateTime && p.CreateTime < request.EndCreateTime);
+            }
+
+            return await _wrapper.StoreHouseRepository.FindByCondition(expression)
+                .OrderByDescending(_ => _.UpdateTime)
+                .ToListAsync();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"QueryStoreHouseAsync error: {e.Message}");
             throw;
         }
     }

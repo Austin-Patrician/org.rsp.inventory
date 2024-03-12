@@ -32,7 +32,7 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
     /// <returns></returns>
     public async Task<List<GoodsCategory>> QueryGoodsCategoryAsync()
     {
-        return await _wrapper.GoodsCategoryRepository.FindAll().Where(_ => _.IsDeleted == false).ToListAsync();
+        return await _wrapper.GoodsCategoryRepository.FindAll().ToListAsync();
     }
 
     /// <summary>
@@ -43,33 +43,41 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
     {
         var valueTuples = new List<(string, string)>();
 
-        //logic del
-        if (!ids.Any())
+        try
         {
+            //logic del
+            if (!ids.Any())
+            {
+                return valueTuples;
+            }
+
+            //先判断还有没关联的category，否则不能删除
+            var delList = await _wrapper.GoodsCategoryRepository.FindByCondition(_ => ids.Contains(_.GoodsCategoryId))
+                .ToListAsync();
+            foreach (var category in delList)
+            {
+                var goodsList = await _wrapper.GoodsRepository
+                    .FindByCondition(_ => _.GoodsCategoryId == category.GoodsCategoryId).ToListAsync();
+                if (goodsList.Any())
+                {
+                    valueTuples.Add((category.GoodsCategoryName, "This has related goods, it can't be remove."));
+                }
+                else
+                {
+                    category.IsDeleted = true;
+                    _wrapper.GoodsCategoryRepository.Update(category);
+                }
+            }
+
+            await _wrapper.SaveChangeAsync();
+
             return valueTuples;
         }
-
-        //先判断还有没关联的category，否则不能删除
-        var delList = await _wrapper.GoodsCategoryRepository.FindByCondition(_ => ids.Contains(_.GoodsCategoryId))
-            .ToListAsync();
-        foreach (var category in delList)
+        catch (Exception e)
         {
-            var goodsList = await _wrapper.GoodsRepository
-                .FindByCondition(_ => _.GoodsCategoryId == category.GoodsCategoryId).ToListAsync();
-            if (goodsList.Any())
-            {
-                valueTuples.Add((category.GoodsCategoryName, "This has related goods, it can't be remove."));
-            }
-            else
-            {
-                category.IsDeleted = true;
-                _wrapper.GoodsCategoryRepository.Update(category);
-            }
+            _logger.LogError($"BatchDelGoodsCategoryAsync error: {e.Message}");
+            throw;
         }
-
-        await _wrapper.SaveChangeAsync();
-
-        return valueTuples;
     }
 
     /// <summary>
@@ -78,11 +86,32 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
     /// <param name="request"></param>
     public async Task UpdateGoodsCategoryAsync(UpdateGoodsCategoryRequest request)
     {
-        //need to check if image change.
-        var goodsCategory = _mapper.Map<GoodsCategory>(request);
-        _wrapper.GoodsCategoryRepository.Update(goodsCategory);
+        try
+        {
+            var entity = await _wrapper.GoodsCategoryRepository
+                .FindByCondition(_ => _.GoodsCategoryId == request.GoodCategoryId)
+                .FirstOrDefaultAsync();
+            
+            //need to check if image change.
+            if (!string.IsNullOrEmpty(request.Description))
+            {
+                entity!.Description=request.Description;
+            }
 
-        await _wrapper.SaveChangeAsync();
+            if (!string.IsNullOrEmpty(request.GoodsCategoryName))
+            {
+                entity!.GoodsCategoryName = request.GoodsCategoryName;
+            }
+            
+            _wrapper.GoodsCategoryRepository.Update(entity);
+
+            await _wrapper.SaveChangeAsync();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"UpdateGoodsCategoryAsync error: {e.Message}");
+            throw;
+        }
     }
 
 
@@ -96,14 +125,10 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
             .FindByCondition(_ => _.GoodsCategoryName == request.GoodsCategoryName).FirstOrDefaultAsync();
 
         if (goods is not null)
-        {
             return;
-        }
 
         var goodsCategory = _mapper.Map<GoodsCategory>(request);
-
-        goodsCategory.CreateBy = "Austin";
-        goodsCategory.UpdateTime = DateTime.Now;
+        
         //TODO:Upload image，set image Id.
         _wrapper.GoodsCategoryRepository.Create(goodsCategory);
         await _wrapper.SaveChangeAsync();

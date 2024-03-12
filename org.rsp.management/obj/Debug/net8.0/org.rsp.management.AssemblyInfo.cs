@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("org.rsp.management")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+083d0a696dd1c7a4ae5ee5a1cc44df8a576852b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6948ba7bbb0e93e7f550ad097902462f1d509a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("org.rsp.management")]
 [assembly: System.Reflection.AssemblyTitleAttribute("org.rsp.management")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

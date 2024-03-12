@@ -45,4 +45,66 @@ public class StoreHouseManager : IStoreHouseManager, ITransient
             throw;
         }
     }
+
+    /// <summary>
+    /// 更新仓库
+    /// </summary>
+    /// <param name="request"></param>
+    public async Task UpdateStoreHouseAsync(UpdateStoreHouseRequest request)
+    {
+        try
+        {
+            var entity = await _wrapper.StoreHouseRepository
+                .FindByCondition(_ => _.StoreHouseId == request.StoreHouseId).FirstOrDefaultAsync();
+
+            if (!string.IsNullOrEmpty(request.StoreHouseName))
+            {
+                //为空则不更新
+                entity!.StoreHouseName = request.StoreHouseName;
+            }
+
+            if (!string.IsNullOrEmpty(request.Location))
+            {
+                entity!.Location = request.Location;
+            }
+
+            entity.UpdateBy = request.UpdateBy;
+
+            _wrapper.StoreHouseRepository.Update(entity);
+            await _wrapper.SaveChangeAsync();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"UpdateStoreHouseAsync error: {e.Message}");
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// 批量删除仓库
+    /// </summary>
+    /// <param name="ids"></param>
+    public async Task BatchDeleteStoreHouseAsync(List<int> ids)
+    {
+        try
+        {
+            if (!ids.Any())
+                return;
+
+            var delList = await _wrapper.StoreHouseRepository.FindByCondition(_ => ids.Contains(_.StoreHouseId))
+                .ToListAsync();
+            foreach (var storeHouse in delList)
+            {
+                storeHouse.IsDeleted = true;
+                _wrapper.StoreHouseRepository.Update(storeHouse);
+            }
+
+            await _wrapper.SaveChangeAsync();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"BatchDeleteStoreHouseAsync error: {e.Message}");
+            throw;
+        }
+    }
 }

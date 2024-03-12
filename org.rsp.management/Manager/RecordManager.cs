@@ -133,7 +133,7 @@ public class RecordManager : IRecordManager, ITransient
     /// 更新record
     /// </summary>
     /// <param name="ids"></param>
-    public async Task DelRecordAsync(List<int> ids)
+    public async Task BatchDelRecordAsync(List<int> ids)
     {
         if (!ids.Any())
             return;

@@ -8,5 +8,6 @@ public interface IRecordManager
     Task<List<Record>> QueryRecordAsync(QueryRecordConditionRequest request);
     Task AddWareHouseRecordAsync(AddWareHouseRecordRequest request);
 
-    Task DelRecordAsync(List<int> ids);
+    Task BatchDelRecordAsync(List<int> ids);
+    
 }

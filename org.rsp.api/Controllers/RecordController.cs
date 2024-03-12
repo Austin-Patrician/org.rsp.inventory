@@ -45,8 +45,8 @@ public class RecordController
     /// </summary>
     /// <param name="ids"></param>
     [HttpPost]
-    public async Task DelRecord(List<int> ids)
+    public async Task BatchDelRecord(List<int> ids)
     {
-        await _recordManager.DelRecordAsync(ids);
+        await _recordManager.BatchDelRecordAsync(ids);
     }
 }

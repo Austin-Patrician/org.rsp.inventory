@@ -9,8 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5082496f-2664-4f42-9083-010815d7fe60" name="Changes" comment="add the other else.">
+    <list default="true" id="5082496f-2664-4f42-9083-010815d7fe60" name="Changes" comment="update the del_logic.">
+      <change afterPath="$PROJECT_DIR$/org.rsp.entity/Request/UpdateStoreHouseRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.org.rsp.base/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.org.rsp.base/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.api/Controllers/RecordController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/Controllers/RecordController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.api/Controllers/StoreHouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/Controllers/StoreHouseController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.pdb" afterDir="false" />
@@ -26,7 +29,8 @@
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/ref/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/ref/org.rsp.api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/refint/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/refint/org.rsp.api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/Request/AddRecordRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/Request/AddRecordRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.entity/Request/AddGoodsCategoryRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/Request/AddGoodsCategoryRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.entity/Request/UpdateGoodsCategoryRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/Request/UpdateGoodsCategoryRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfo.cs" afterDir="false" />
@@ -35,7 +39,11 @@
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/ref/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/ref/org.rsp.entity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/refint/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/refint/org.rsp.entity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.entity/service/IRecordManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/service/IRecordManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.entity/service/IStoreHouseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/service/IStoreHouseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/Manager/RecordManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/Manager/RecordManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.management/Manager/StoreHouseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/Manager/StoreHouseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.management.dll" afterDir="false" />
@@ -69,6 +77,7 @@
     <setting file="mock://C:/Users/Austin_Zhang/RiderProjects/org.rsp.base/org.rsp.api/Controllers/RecordController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Austin_Zhang/RiderProjects/org.rsp.base/org.rsp.api/obj/Debug/net8.0/org.rsp.api.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Austin_Zhang/RiderProjects/org.rsp.base/org.rsp.entity/Common/SqlBindHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Austin_Zhang/RiderProjects/org.rsp.base/org.rsp.entity/Request/AddRecordRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Austin_Zhang/RiderProjects/org.rsp.base/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Austin_Zhang/RiderProjects/org.rsp.base/org.rsp.entity/service/IRecordManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Austin_Zhang/RiderProjects/org.rsp.base/org.rsp.management/Manager/RecordManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -165,7 +174,7 @@
       <workItem from="1709860681884" duration="17000" />
       <workItem from="1709860707739" duration="7246000" />
       <workItem from="1709873715768" duration="24873000" />
-      <workItem from="1710136085650" duration="7924000" />
+      <workItem from="1710136085650" duration="13499000" />
     </task>
     <task id="LOCAL-00001" summary="fix the sql bind error.">
       <option name="closed" value="true" />
@@ -183,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710146557447</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update the del_logic.">
+      <option name="closed" value="true" />
+      <created>1710147354867</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710147354867</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,37 +225,12 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fix the sql bind error." />
     <MESSAGE value="add the other else." />
-    <option name="LAST_COMMIT_MESSAGE" value="add the other else." />
+    <MESSAGE value="update the del_logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="update the del_logic." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/org.rsp.api/Controllers/GoodsCategoryController.cs</url>
-          <line>39</line>
-          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.api\Controllers\GoodsCategoryController.cs" initialLine="33" containingFunctionPresentation="Method 'AddGoodsCategory'">
-            <startOffsets>
-              <option value="926" />
-            </startOffsets>
-            <endOffsets>
-              <option value="972" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs</url>
-          <line>104</line>
-          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsCategoryManager.cs" initialLine="89" containingFunctionPresentation="Method 'AddGoodsCategoryAsync'">
-            <startOffsets>
-              <option value="3182" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3216" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/org.rsp.api/Controllers/StoreHouseController.cs</url>
           <line>26</line>
@@ -257,10 +249,10 @@
           <line>110</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsManager.cs" initialLine="92" containingFunctionPresentation="Method 'AddGoodsAsync'">
             <startOffsets>
-              <option value="2796" />
+              <option value="2788" />
             </startOffsets>
             <endOffsets>
-              <option value="2995" />
+              <option value="2987" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
@@ -280,52 +272,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs</url>
-          <line>120</line>
+          <line>145</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsCategoryManager.cs" initialLine="105" containingFunctionPresentation="Method 'QueryGoodsCategoryByPageAsync'">
             <startOffsets>
-              <option value="3712" />
+              <option value="4491" />
             </startOffsets>
             <endOffsets>
-              <option value="3766" />
+              <option value="4545" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs</url>
-          <line>129</line>
+          <line>154</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsCategoryManager.cs" initialLine="114" containingFunctionPresentation="Method 'QueryGoodsCategoryByPageAsync'">
             <startOffsets>
-              <option value="3940" />
+              <option value="4719" />
             </startOffsets>
             <endOffsets>
-              <option value="4033" />
+              <option value="4812" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs</url>
-          <line>46</line>
-          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsCategoryManager.cs" initialLine="44" containingFunctionPresentation="Method 'BatchDelGoodsCategoryAsync'">
-            <startOffsets>
-              <option value="1396" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1411" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/org.rsp.management/Manager/GoodsManager.cs</url>
           <line>119</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsManager.cs" initialLine="119" containingFunctionPresentation="Method 'AddGoodsAsync'">
             <startOffsets>
-              <option value="3138" />
+              <option value="3130" />
             </startOffsets>
             <endOffsets>
-              <option value="3180" />
+              <option value="3172" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="20" />
@@ -335,10 +314,10 @@
           <line>117</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsManager.cs" initialLine="117" containingFunctionPresentation="Method 'AddGoodsAsync'">
             <startOffsets>
-              <option value="3069" />
+              <option value="3061" />
             </startOffsets>
             <endOffsets>
-              <option value="3112" />
+              <option value="3104" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="21" />
@@ -387,10 +366,10 @@
           <line>49</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.api\Controllers\RecordController.cs" initialLine="49" containingFunctionPresentation="Method 'DelGoodsCategory'">
             <startOffsets>
-              <option value="1280" />
+              <option value="1285" />
             </startOffsets>
             <endOffsets>
-              <option value="1321" />
+              <option value="1331" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="31" />
@@ -426,10 +405,10 @@
           <line>43</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.api\Controllers\GoodsController.cs" initialLine="43" containingFunctionPresentation="Method 'DelGoodsCategory'">
             <startOffsets>
-              <option value="1116" />
+              <option value="1108" />
             </startOffsets>
             <endOffsets>
-              <option value="1175" />
+              <option value="1159" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="35" />

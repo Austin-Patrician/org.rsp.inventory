@@ -39,16 +39,16 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
     /// Del the category
     /// </summary>
     /// <param name="ids"></param>
-    public async Task<List<(string, string)>> BatchDelGoodsCategoryAsync(List<int> ids)
+    public async Task<List<string>> BatchDelGoodsCategoryAsync(List<int> ids)
     {
-        var valueTuples = new List<(string, string)>();
+        var response = new List<string>();
 
         try
         {
             //logic del
             if (!ids.Any())
             {
-                return valueTuples;
+                return response;
             }
 
             //先判断还有没关联的category，否则不能删除
@@ -60,7 +60,7 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
                     .FindByCondition(_ => _.GoodsCategoryId == category.GoodsCategoryId).ToListAsync();
                 if (goodsList.Any())
                 {
-                    valueTuples.Add((category.GoodsCategoryName, "This has related goods, it can't be remove."));
+                    response.Add(($"{category.GoodsCategoryName}  has related goods, it can't be remove."));
                 }
                 else
                 {
@@ -71,7 +71,7 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
 
             await _wrapper.SaveChangeAsync();
 
-            return valueTuples;
+            return response;
         }
         catch (Exception e)
         {

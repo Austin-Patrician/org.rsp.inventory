@@ -77,8 +77,8 @@ public class GoodsCategoryController
     /// </summary>
     /// <param name="ids"></param>
     [HttpPost]
-    public async Task DelGoodsCategory(List<int> ids)
+    public async Task<ResponseResult<List<string>>> BatchDelGoodsCategory(List<int> ids)
     {
-        await _manager.BatchDelGoodsCategoryAsync(ids);
+        return await _manager.BatchDelGoodsCategoryAsync(ids);
     }
 }

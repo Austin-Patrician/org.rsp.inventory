@@ -9,17 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5082496f-2664-4f42-9083-010815d7fe60" name="Changes" comment="update/add some part logic.">
-      <change afterPath="$PROJECT_DIR$/org.rsp.entity/Request/QueryStoreHouseByConditionRequest.cs" afterDir="false" />
+    <list default="true" id="5082496f-2664-4f42-9083-010815d7fe60" name="Changes" comment="add storehouse query.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.org.rsp.base/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.org.rsp.base/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/Controllers/StoreHouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/Controllers/StoreHouseController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.api/Controllers/GoodsCategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/Controllers/GoodsCategoryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.management.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.management.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/bin/Debug/net8.0/org.rsp.management.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/apphost.exe" afterDir="false" />
@@ -30,37 +25,12 @@
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/org.rsp.api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/ref/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/ref/org.rsp.api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/refint/org.rsp.api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.api/obj/Debug/net8.0/refint/org.rsp.api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/bin/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/bin/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/bin/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/bin/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/ref/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/ref/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/refint/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.database/obj/Debug/net8.0/refint/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/bin/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/ref/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/ref/org.rsp.entity.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/refint/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/obj/Debug/net8.0/refint/org.rsp.entity.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.entity/service/IStoreHouseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/service/IStoreHouseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/Manager/StoreHouseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/Manager/StoreHouseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.database.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.database.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.entity.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.entity/service/IGoodsCategoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.entity/service/IGoodsCategoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.management.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.management.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/bin/Debug/net8.0/org.rsp.management.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/org.rsp.management.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/ref/org.rsp.management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/org.rsp.management/obj/Debug/net8.0/ref/org.rsp.management.dll" afterDir="false" />
@@ -78,7 +48,9 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/a97f6ffcf78100056683c8c3b116721a89e5c58c/src/EFCore/Infrastructure/DatabaseFacade.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/System.Private.CoreLib/src/System/IO/File.Windows.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/System.Private.CoreLib/src/System/IO/File.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/TaskAwaiter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/System.Private.CoreLib/src/System/String.Searching.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Future.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c4e6ed10be22e0c0e61fbdd1a4be1af1a73196845bb8da4f30af2d9f5adcb8/MapExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dfa5b386eba591327e291eabd55c29de3c1bfd692af92e411141c47b371b0c8/Mapper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -185,7 +157,7 @@
       <workItem from="1709860681884" duration="17000" />
       <workItem from="1709860707739" duration="7246000" />
       <workItem from="1709873715768" duration="24873000" />
-      <workItem from="1710136085650" duration="15086000" />
+      <workItem from="1710136085650" duration="16416000" />
     </task>
     <task id="LOCAL-00001" summary="fix the sql bind error.">
       <option name="closed" value="true" />
@@ -219,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710206293225</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add storehouse query.">
+      <option name="closed" value="true" />
+      <created>1710208186656</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710208186656</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +226,8 @@
     <MESSAGE value="add the other else." />
     <MESSAGE value="update the del_logic." />
     <MESSAGE value="update/add some part logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="update/add some part logic." />
+    <MESSAGE value="add storehouse query." />
+    <option name="LAST_COMMIT_MESSAGE" value="add storehouse query." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -295,10 +276,10 @@
           <line>145</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsCategoryManager.cs" initialLine="105" containingFunctionPresentation="Method 'QueryGoodsCategoryByPageAsync'">
             <startOffsets>
-              <option value="4491" />
+              <option value="4457" />
             </startOffsets>
             <endOffsets>
-              <option value="4545" />
+              <option value="4511" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="15" />
@@ -308,10 +289,10 @@
           <line>154</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsCategoryManager.cs" initialLine="114" containingFunctionPresentation="Method 'QueryGoodsCategoryByPageAsync'">
             <startOffsets>
-              <option value="4719" />
+              <option value="4685" />
             </startOffsets>
             <endOffsets>
-              <option value="4812" />
+              <option value="4778" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
@@ -434,19 +415,6 @@
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/org.rsp.management/Manager/StoreHouseManager.cs</url>
-          <line>120</line>
-          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\StoreHouseManager.cs" initialLine="120" containingFunctionPresentation="Method 'QueryStoreHouseAsync'">
-            <startOffsets>
-              <option value="3523" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3561" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/org.rsp.api/Controllers/StoreHouseController.cs</url>
           <line>47</line>
           <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.api\Controllers\StoreHouseController.cs" initialLine="47" containingFunctionPresentation="Method 'QueryStoreHouse'">
@@ -458,6 +426,45 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs</url>
+          <line>43</line>
+          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsCategoryManager.cs" initialLine="43" containingFunctionPresentation="Method 'BatchDelGoodsCategoryAsync'">
+            <startOffsets>
+              <option value="1276" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1310" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/org.rsp.api/Controllers/GoodsCategoryController.cs</url>
+          <line>81</line>
+          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.api\Controllers\GoodsCategoryController.cs" initialLine="81" containingFunctionPresentation="Method 'DelGoodsCategory'">
+            <startOffsets>
+              <option value="2037" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2084" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/org.rsp.management/Manager/GoodsCategoryManager.cs</url>
+          <line>73</line>
+          <properties documentPath="C:\Users\Austin_Zhang\RiderProjects\org.rsp.base\org.rsp.management\Manager\GoodsCategoryManager.cs" initialLine="73" containingFunctionPresentation="Method 'BatchDelGoodsCategoryAsync'">
+            <startOffsets>
+              <option value="2296" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2312" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

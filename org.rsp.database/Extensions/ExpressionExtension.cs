@@ -28,9 +28,9 @@ public static class ExpressionExtension
     public static Expression<Func<TEntity, bool>> And<TEntity>(this Expression<Func<TEntity, bool>> first, Expression<Func<TEntity, bool>> second)
     {
         ParameterExpression parameter = Expression.Parameter(typeof(TEntity), "t");
-        ParameterRebinder rebinder = new ParameterRebinder(parameter);
-        Expression left = rebinder.RebindParameter(first.Body);
-        Expression right = rebinder.RebindParameter(second.Body);
+        ParameterRebinder reBinder = new ParameterRebinder(parameter);
+        Expression left = reBinder.RebindParameter(first.Body);
+        Expression right = reBinder.RebindParameter(second.Body);
         Expression body = Expression.AndAlso(left, right);
         Expression<Func<TEntity, bool>> expression = Expression.Lambda<Func<TEntity, bool>>(body, parameter);
         return expression;
@@ -46,9 +46,9 @@ public static class ExpressionExtension
     public static Expression<Func<TEntity, bool>> Or<TEntity>( Expression<Func<TEntity, bool>> first, Expression<Func<TEntity, bool>> second)
     {
         ParameterExpression parameter = Expression.Parameter(typeof(TEntity), "t");
-        ParameterRebinder rebinder = new ParameterRebinder(parameter);
-        Expression left = rebinder.RebindParameter(first.Body);
-        Expression right = rebinder.RebindParameter(second.Body);
+        ParameterRebinder reBinder = new ParameterRebinder(parameter);
+        Expression left = reBinder.RebindParameter(first.Body);
+        Expression right = reBinder.RebindParameter(second.Body);
         Expression body = Expression.OrElse(left, right);
         Expression<Func<TEntity, bool>> expression = Expression.Lambda<Func<TEntity, bool>>(body, parameter);
         return expression;

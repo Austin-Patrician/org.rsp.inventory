@@ -33,7 +33,7 @@ public class RecordManager : IRecordManager, ITransient
     /// <param name="request"></param>
     public async Task<List<Record>> QueryRecordAsync(QueryRecordConditionRequest request)
     {
-        var response = new List<Record>();
+        List<Record> response;
 
         if (request.Direction != null)
         {

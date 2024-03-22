@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("org.rsp.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e48477ff4463ae8146cfe06fca415b4a518dad23")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf3c94d742951829d6fe3f6f614f29ac692bc4fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("org.rsp.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("org.rsp.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

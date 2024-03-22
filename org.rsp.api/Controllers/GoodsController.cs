@@ -43,20 +43,5 @@ public class GoodsController : ApiBaseController
     {
         return await _goodsManager.BatchDelGoodsAsync(ids);
     }
-
-    [HttpPost]
-    public async Task<LoginResposne> Login(string username, string password)
-    {
-        return new LoginResposne()
-        {
-            token = username+password
-        };
-
-    }
-
-    public class LoginResposne
-    {
-        public string token { get; set; }
-        
-    }
+    
 }

@@ -30,8 +30,11 @@ public class StoreHouseManager : IStoreHouseManager, ITransient
     {
         try
         {
+            //the unique storehouse is storehouseName & Location is different.
             var storeHouse = await _wrapper.StoreHouseRepository
-                .FindByCondition(_ => string.Equals(_.StoreHouseName, request.StoreHouseName)).FirstOrDefaultAsync();
+                .FindByCondition(_ =>
+                    string.Equals(_.StoreHouseName, request.StoreHouseName) &&
+                    string.Equals(_.Location, request.Location)).FirstOrDefaultAsync();
 
             if (storeHouse is not null)
                 return;
@@ -121,7 +124,7 @@ public class StoreHouseManager : IStoreHouseManager, ITransient
         try
         {
             //后续增加redis 缓存
-            
+
             Expression<Func<StoreHouse, bool>> expression = ExpressionExtension.True<StoreHouse>();
             if (!string.IsNullOrEmpty(request.StoreHouseName))
             {

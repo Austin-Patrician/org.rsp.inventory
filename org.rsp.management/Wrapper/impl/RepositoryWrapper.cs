@@ -17,6 +17,39 @@ public class RepositoryWrapper : IRepositoryWrapper
     private IStoreHouseRepository _storeHouseRepository;
     private IRecordRepository _recordRepository;
 
+    
+    private  IRoleRepository _roleRepository;
+    private  IPermissionRepository _permissionRepository;
+    private  IUserRoleRepository _userRoleRepository;
+    private  IUserRepository _userRepository;
+    private  IRolePermissionRepository _rolePermissionRepository;
+    
+    public IRoleRepository Role
+    {
+        get { return _roleRepository ??= new RoleRepository(_context); }
+    }
+    
+    public IRolePermissionRepository RolePermission
+    {
+        get { return _rolePermissionRepository ??= new RolePermissionRepository(_context); }
+    }
+    
+    
+    public IPermissionRepository Permission
+    {
+        get { return _permissionRepository ??= new PermissionRepository(_context); }
+    }
+    
+    public IUserRepository User
+    {
+        get { return _userRepository ??= new UserRepository(_context); }
+    }
+    
+    public IUserRoleRepository UserRole
+    {
+        get { return _userRoleRepository ??= new UserRoleRepository(_context); }
+    }
+    
     public IGoodsCategoryRepository GoodsCategoryRepository
     {
         get { return _goodsCategoryRepository ??= new GoodsCategoryRepository(_context); }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "TFHE9uiII91xg3OQYs7gINlGFKtksxtAyLxJGQKkvFOm58TEq/c4ypieY4YUUE08XA1XMdxEgOUZSqH9LjXX9g==",
+  "dgSpecHash": "Xi5N/eG/z2CPhxZOMor1ho1h6W0sB6pnNS6ufNMKaCv6YJsnMfAB/r9dS6gaBuhzktIREE4pM/NbCIj15e1WGw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Austin_Zhang\\RiderProjects\\org.rsp.base\\org.rsp.entity\\org.rsp.entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Austin_Zhang\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Austin_Zhang\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Austin_Zhang\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Austin_Zhang\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Austin_Zhang\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Austin_Zhang\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.4\\microsoft.data.sqlclient.5.1.4.nupkg.sha512",
@@ -60,5 +61,12 @@
     "C:\\Users\\Austin_Zhang\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Austin_Zhang\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://rsp-poc-secommunity:11000/repository/nuget-group/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

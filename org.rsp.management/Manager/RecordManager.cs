@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using org.rsp.database.Table;
 using org.rsp.entity.Common;
 using org.rsp.entity.Request;
@@ -117,7 +116,7 @@ public class RecordManager : IRecordManager, ITransient
                 await transaction.CommitAsync();
             }
         }
-        catch (Exception e)
+        catch (Exception e) when(e.Message.Contains(""))
         {
             _logger.LogError($"AddWareHouseRecordAsync error: {e.Message}");
             if (transaction != null) await transaction.RollbackAsync();
@@ -142,4 +141,5 @@ public class RecordManager : IRecordManager, ITransient
         var bindInSql = SqlBindHelper.BindInSql(ids);
         await _wrapper.ExecuteSqlRaw($"update [teest].[dbo].[Records] set IsDeleted =1 where RecordId in ({bindInSql}) " );
     }
+    
 }

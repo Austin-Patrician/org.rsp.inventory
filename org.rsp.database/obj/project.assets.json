@@ -4105,6 +4105,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://rsp-poc-secommunity:11000/repository/nuget-group/index.json": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://rspnuget.rspinternal.com/nuget": {}
       },
@@ -4164,5 +4165,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://rsp-poc-secommunity:11000/repository/nuget-group/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

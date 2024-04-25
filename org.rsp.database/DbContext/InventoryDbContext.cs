@@ -13,6 +13,12 @@ public class InventoryDbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Record> Records { get; set; }
     public DbSet<WareHouseRecord> WareHouseRecord { get; set; }
     
+    //权限控制
+    public DbSet<Role> Role { get; set; }
+    public DbSet<User> User { get; set; }
+    public DbSet<Permission> Permission { get; set; }
+    public DbSet<UserRole> UserRole { get; set; }
+    public DbSet<RolePermission> RolePermission { get; set; }
     public InventoryDbContext(DbContextOptions options) : base(options)
     {
     }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using org.rsp.api.Auth;
 using org.rsp.database.Table;
 using org.rsp.entity.Common;
 using org.rsp.entity.Request;
@@ -27,6 +28,7 @@ public class GoodsController : ApiBaseController
     }
 
     [HttpGet]
+    [Yes(Roles = "Administrator")]
     public async Task<ResponseResult<List<Goods>>> QueryGoodsCategory()
     {
         return await _goodsManager.QueryGoodsAsync();

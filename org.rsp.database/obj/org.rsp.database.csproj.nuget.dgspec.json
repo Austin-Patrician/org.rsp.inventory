@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://rsp-poc-secommunity:11000/repository/nuget-group/index.json": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://rspnuget.rspinternal.com/nuget": {}
         },

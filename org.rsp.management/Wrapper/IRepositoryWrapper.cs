@@ -11,6 +11,16 @@ public interface IRepositoryWrapper
     IStoreHouseRepository StoreHouseRepository { get; }
     IRecordRepository RecordRepository { get; }
     
+    
+    IRoleRepository Role { get; }
+    IPermissionRepository Permission { get; }
+    IUserRoleRepository UserRole { get; }
+    
+    IUserRepository User { get; }
+    
+    IRolePermissionRepository RolePermission { get; }
+    
+    
     Task<int> SaveChangeAsync();
 
     Task<IDbContextTransaction> StartTransactionAsync();

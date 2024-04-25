@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using org.rsp.database.Table;
+using org.rsp.entity.Model;
 using org.rsp.entity.Request;
 
 namespace org.rsp.management.MapProfile;
@@ -14,5 +15,14 @@ public class InventoryMapperProfile : Profile
         CreateMap<AddStoreHouseRequest, StoreHouse>();
         CreateMap<AddGoodsRequest, Goods>();
         CreateMap<AddRecordRequest, Record>();
+        
+        CreateMap<Role,RoleModel>();
+        CreateMap<User,UserModel>();
+        CreateMap<UserRole,UserRoleModel>();
+        CreateMap<UserRoleModel,UserRole>();
+        CreateMap<RolePermission,RolePermissionModel>();
+        CreateMap<AddUserRequest,User>();
+        CreateMap<AddRoleRequest, Role>();
+
     }
 }

@@ -1,11 +1,14 @@
-﻿namespace org.rsp.database.Table;
+﻿using Microsoft.EntityFrameworkCore;
 
+namespace org.rsp.database.Table;
+
+[PrimaryKey(nameof(Id))]
 public class Role : BaseTable
 {
-    public int RoleId { get; set; }
+    public int Id { get; set; }
     
-    public string RoleName { get; set; }
-    public string UserId { get; set; }
-    
-    public virtual User User { get; set; }
+    /// <summary>
+    /// 角色名称
+    /// </summary>
+    public string Name { get; set; }
 }

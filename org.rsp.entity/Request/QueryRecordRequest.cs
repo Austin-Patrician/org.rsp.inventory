@@ -2,11 +2,12 @@
 
 namespace org.rsp.entity.Request;
 
-public class QueryRecordConditionRequest : Pager
+public class QueryRecordRequest : Pager
 {
     //default in.
     public byte? Direction { get; set; } = 0;
     
-    //供应商
-    public string SupplierName { get; set; }
+    public string? GoodsName { get; set; }
+    
+    public string? StoreHouseName { get; set; }
 }

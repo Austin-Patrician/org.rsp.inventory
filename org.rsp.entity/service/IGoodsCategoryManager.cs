@@ -6,7 +6,7 @@ namespace org.rsp.entity.service;
 
 public interface IGoodsCategoryManager
 {
-    Task<List<GoodsCategory>> QueryGoodsCategoryAsync();
+    Task<QueryGoodsCategoryResponse> QueryGoodsCategoryAsync(QueryGoodsCategoryRequest request);
 
     Task<List<string>> BatchDelGoodsCategoryAsync(List<int> ids);
     Task<QueryGoodsCategoryByPageResponse> QueryGoodsCategoryByPageAsync(QueryCategoryByConditionRequest request);

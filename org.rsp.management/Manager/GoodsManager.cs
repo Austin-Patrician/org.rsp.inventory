@@ -1,8 +1,12 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using org.rsp.database.Expressions;
 using org.rsp.database.Table;
+using org.rsp.entity.Model;
 using org.rsp.entity.Request;
+using org.rsp.entity.Response;
 using org.rsp.entity.service;
 using org.rsp.management.Wrapper;
 
@@ -28,12 +32,62 @@ public class GoodsManager : IGoodsManager, ITransient
     /// query all goods
     /// </summary>
     /// <returns></returns>
-    public async Task<List<Goods>> QueryGoodsAsync()
+    public async Task<QueryGoodsResponse> QueryGoodsAsync(QueryGoodsRequest request)
     {
-        return await _wrapper.GoodsRepository.FindAll()
-            .Include(o => o.GoodsCategory)
-            .Include(p => p.StoreHouse)
-            .Where(_ => _.IsDeleted == false).ToListAsync();
+        var response = new QueryGoodsResponse();
+        try
+        {
+            Expression<Func<Goods, bool>> expression = ExpressionExtension.True<Goods>();
+
+            if (!string.IsNullOrEmpty(request.GoodsName))
+            {
+                expression = expression.And(p => p.GoodsName == request.GoodsName);
+            }
+
+            expression = expression.And(p => p.IsDeleted == false);
+            
+            var list = await _wrapper.GoodsRepository.FindByCondition(expression).OrderByDescending(_=>_.UpdateTime)
+                .Include(o => o.GoodsCategory)
+                .Include(p => p.StoreHouse)
+                .Skip((request.PageNumber-1)* request.PageSize).Take(request.PageSize).ToListAsync();
+            if (list.Any())
+            {
+                response.GoodsResponses = _mapper.Map<List<GoodsResponse>>(list);
+            }
+
+            response.TotalCount = await _wrapper.GoodsRepository.FindByCondition(expression).CountAsync();
+
+            return response;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"QueryGoodsAsync error: " +e.Message);
+            throw;
+        }
+    }
+    
+    public async Task<List<GoodsResponse>> QueryGoodsByStoreHouseIdAsync(QueryGoodsByStoreHouseIdRequest request)
+    {
+        var response = new List<GoodsResponse>();
+        try
+        {
+            var list = await _wrapper.GoodsRepository.FindByCondition(_ =>  _.StoreHouseId==request.storeHouseId && _.IsDeleted == false)
+                .OrderByDescending(_=>_.UpdateTime)
+                .Include(o => o.GoodsCategory)
+                .Include(p => p.StoreHouse)
+                .Skip((request.PageNumber-1)* request.PageSize).Take(request.PageSize).ToListAsync();
+            if (list.Any())
+            {
+                response = _mapper.Map<List<GoodsResponse>>(list);
+            }
+
+            return response;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"QueryGoodsByStoreHouseIdAsync error: " +e.Message);
+            throw;
+        }
     }
 
     /// <summary>
@@ -72,17 +126,33 @@ public class GoodsManager : IGoodsManager, ITransient
     /// update the Goods
     /// </summary>
     /// <param name="request"></param>
-    public async Task<bool> UpdateGoodsAsync(UpdateGoodsRequest request)
+    public async Task UpdateGoodsAsync(UpdateGoodsRequest request)
     {
         try
         {
-            //need to check if image change.
-            var goodsCategory = _mapper.Map<Goods>(request);
-            _wrapper.GoodsRepository.Update(goodsCategory);
+            var goods =await _wrapper.GoodsRepository.FindByCondition(_ => _.GoodsId == request.GoodsId).FirstOrDefaultAsync();
+            if (goods is null)
+                return;
+            //remark可以为空
+            if (!string.Equals(request.Remark, goods.Remark))
+            {
+                goods.Remark = request.Remark;
+            }
 
+            if (request.Price is not null && request.Price != goods.Price)
+            {
+                goods.Price = request.Price ?? 0;
+            }
+
+            if (!string.IsNullOrEmpty(request.Description) && !string.Equals(request.Description, goods.Description))
+            {
+                goods.Description = request.Description;
+            }
+            
+            goods.UpdateBy = request.UpdateBy;
+            goods.UpdateTime=DateTime.Now;
+            _wrapper.GoodsRepository.Update(goods);
             await _wrapper.SaveChangeAsync();
-
-            return true;
         }
         catch (Exception e)
         {

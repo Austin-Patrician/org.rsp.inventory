@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.JwtAuthentication();
+builder.AuthMenus();
 builder.Services.ConfigureCors();
 
 builder.Services.AddControllers();

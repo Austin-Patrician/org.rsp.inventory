@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using org.rsp.database.DbContext;
+using org.rsp.entity.Common;
 using org.rsp.entity.Model;
 using org.rsp.entity.service;
 using org.rsp.management.Wrapper;
@@ -27,7 +28,7 @@ public static class ServiceExtension
     
     public static void ConfigureSqlServer(this IServiceCollection service,IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("BaseDB");
+        var connectionString = configuration.GetConnectionString("BaseDb");
         service.AddDbContext<InventoryDbContext>(builder =>
             builder.UseSqlServer(connectionString));
     }
@@ -38,7 +39,7 @@ public static class ServiceExtension
         {
             var connectionString = configuration.GetConnectionString("redis");
             return ConnectionMultiplexer.Connect(connectionString ?? "");
-        });
+        }); 
     }
     
     
@@ -119,5 +120,11 @@ public static class ServiceExtension
                 };
             });
     }
-
+    
+    public static void AuthMenus(this WebApplicationBuilder builder)
+    {
+        List<AuthMenus> authMenusList = new List<AuthMenus>();
+        builder.Configuration.Bind("AuthMenus", authMenusList);
+        builder.Services.AddSingleton<AuthMenusExtension>();
+    }
 }

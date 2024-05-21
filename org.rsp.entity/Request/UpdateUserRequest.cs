@@ -15,7 +15,7 @@ public class UpdateUserRequest
     /// <summary>
     /// 手机号
     /// </summary>
-    public string Phone { get; set; }
+    public int Id { get; set; }
     
     /// <summary>
     /// 邮箱地址

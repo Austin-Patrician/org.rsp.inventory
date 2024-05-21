@@ -1,10 +1,10 @@
-﻿namespace org.rsp.entity.Request;
+﻿using org.rsp.entity.Common;
 
-public class AddGoodsCategoryRequest
+namespace org.rsp.entity.Request;
+
+public class AddGoodsCategoryRequest : BaseFiled
 {
     public string GoodsCategoryName { get; set; }
     
-    public string Description { get; set; }
-    
-    public string CreateBy { get; set; }
+    public string? Description { get; set; }
 }

@@ -44,10 +44,10 @@ public class GoodsCategoryController
     /// 查询产品分类
     /// </summary>
     /// <returns></returns>
-    [HttpGet]
-    public async Task<ResponseResult<List<GoodsCategory>>> QueryGoodsCategory()
+    [HttpPost]
+    public async Task<ResponseResult<QueryGoodsCategoryResponse>> QueryGoodsCategory(QueryGoodsCategoryRequest request)
     {
-        return await _manager.QueryGoodsCategoryAsync();
+        return await _manager.QueryGoodsCategoryAsync(request);
     }
 
     /// <summary>

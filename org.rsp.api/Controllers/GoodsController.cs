@@ -2,7 +2,9 @@
 using org.rsp.api.Auth;
 using org.rsp.database.Table;
 using org.rsp.entity.Common;
+using org.rsp.entity.Model;
 using org.rsp.entity.Request;
+using org.rsp.entity.Response;
 using org.rsp.entity.service;
 
 namespace org.rsp.api.Controllers;
@@ -22,28 +24,35 @@ public class GoodsController : ApiBaseController
     }
 
     [HttpPost]
+    [Yes(Roles = "Administrator,Regular")]
     public async Task AddGoods(AddGoodsRequest request)
     {
         await _goodsManager.AddGoodsAsync(request);
     }
 
-    [HttpGet]
-    [Yes(Roles = "Administrator")]
-    public async Task<ResponseResult<List<Goods>>> QueryGoodsCategory()
+    [HttpPost]
+    public async Task<ResponseResult<QueryGoodsResponse>> QueryGoods(QueryGoodsRequest request)
     {
-        return await _goodsManager.QueryGoodsAsync();
+        return await _goodsManager.QueryGoodsAsync(request);
     }
 
     [HttpPost]
-    public async Task<ResponseResult<bool>> UpdateGoods(UpdateGoodsRequest request)
+    [Yes(Roles = "Administrator,Regular")]
+    public async Task UpdateGoods(UpdateGoodsRequest request)
     {
-        return await _goodsManager.UpdateGoodsAsync(request);
+        await _goodsManager.UpdateGoodsAsync(request);
     }
     
     [HttpPost]
+    [Yes(Roles = "Administrator,Regular")]
     public async Task<bool> DelGoods(List<int> ids)
     {
         return await _goodsManager.BatchDelGoodsAsync(ids);
     }
     
+    [HttpPost]
+    public async Task<ResponseResult<List<GoodsResponse>>> QueryGoodsByStoreHouseId(QueryGoodsByStoreHouseIdRequest request)
+    {
+        return await _goodsManager.QueryGoodsByStoreHouseIdAsync(request);
+    }
 }

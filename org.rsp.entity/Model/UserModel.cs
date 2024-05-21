@@ -1,6 +1,8 @@
-﻿namespace org.rsp.entity.Model;
+﻿using org.rsp.entity.Common;
 
-public class UserModel
+namespace org.rsp.entity.Model;
+
+public class UserModel : BaseFiled
 {
     public int Id { get; set; }
     

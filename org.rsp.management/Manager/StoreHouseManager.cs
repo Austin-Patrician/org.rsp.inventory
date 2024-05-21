@@ -4,9 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using NPOI.SS.Formula.Functions;
 using Org.BouncyCastle.Crypto;
+using org.rsp.database.Expressions;
 using org.rsp.database.Extensions;
 using org.rsp.database.Table;
+using org.rsp.entity.Common;
 using org.rsp.entity.Request;
+using org.rsp.entity.Response;
 using org.rsp.entity.service;
 using org.rsp.management.Wrapper;
 
@@ -39,9 +42,9 @@ public class StoreHouseManager : IStoreHouseManager, ITransient
             if (storeHouse is not null)
                 return;
 
+            request.UpdateBy = request.CreateBy;
             var addEntity = _mapper.Map<StoreHouse>(request);
-
-            //TODO:Upload image，set image Id.
+    
             _wrapper.StoreHouseRepository.Create(addEntity);
             await _wrapper.SaveChangeAsync();
         }
@@ -63,19 +66,28 @@ public class StoreHouseManager : IStoreHouseManager, ITransient
             var entity = await _wrapper.StoreHouseRepository
                 .FindByCondition(_ => _.StoreHouseId == request.StoreHouseId).FirstOrDefaultAsync();
 
-            if (!string.IsNullOrEmpty(request.StoreHouseName))
+            if(entity is null)
+                return;
+            
+            if (!string.IsNullOrEmpty(request.StoreHouseName) && !string.Equals(request.StoreHouseName,entity.StoreHouseName))
             {
                 //为空则不更新
-                entity!.StoreHouseName = request.StoreHouseName;
+                entity.StoreHouseName = request.StoreHouseName;
             }
 
-            if (!string.IsNullOrEmpty(request.Location))
+            if ( !string.Equals(request.Remark,entity.Remark))
             {
-                entity!.Location = request.Location;
+                //remark can be null.
+                entity.Remark = request.Remark;
             }
-
+            
+            if (!string.IsNullOrEmpty(request.Location) && !string.Equals(request.Location,entity.Location))
+            {
+                entity.Location = request.Location;
+            }
+            
             entity.UpdateBy = request.UpdateBy;
-
+            entity.UpdateTime=DateTime.Now;
             _wrapper.StoreHouseRepository.Update(entity);
             await _wrapper.SaveChangeAsync();
         }
@@ -119,37 +131,46 @@ public class StoreHouseManager : IStoreHouseManager, ITransient
     /// </summary>
     /// <param name="request"></param>
     /// <returns></returns>
-    public async Task<List<StoreHouse>> QueryStoreHouseAsync(QueryStoreHouseByConditionRequest request)
+    public async Task<QueryStoreHouseResponse> QueryStoreHouseAsync(QueryStoreHouseRequest request)
     {
+        var response = new QueryStoreHouseResponse();
         try
         {
             //后续增加redis 缓存
-
             Expression<Func<StoreHouse, bool>> expression = ExpressionExtension.True<StoreHouse>();
             if (!string.IsNullOrEmpty(request.StoreHouseName))
             {
-                expression = expression.And(p => p.StoreHouseName.Contains(request.StoreHouseName));
+                expression = expression.And(p => p.StoreHouseName.Contains(request.StoreHouseName.Trim()));
             }
 
             if (!string.IsNullOrEmpty(request.Location))
             {
-                expression = expression.And(p => p.Location != null && p.Location.Contains(request.Location));
+                expression = expression.And(p => p.Location != null && p.Location.Contains(request.Location.Trim()));
             }
 
-            if (request.StartCreateTime is not null && request.EndCreateTime is not null)
-            {
-                expression = expression.And(p =>
-                    p.CreateTime > request.StartCreateTime && p.CreateTime < request.EndCreateTime);
-            }
-
-            return await _wrapper.StoreHouseRepository.FindByCondition(expression)
+            expression = expression.And(p => p.IsDeleted == false);
+            
+            var storeHouses = await _wrapper.StoreHouseRepository.FindByCondition(expression)
                 .OrderByDescending(_ => _.UpdateTime)
+                .Skip((request.PageNumber-1)*request.PageSize)
+                .Take(request.PageSize)
                 .ToListAsync();
+
+            if (storeHouses.Any())
+            {
+                response.StoreHouses = storeHouses;
+            }
+
+            response.TotalCount = await _wrapper.StoreHouseRepository.FindByCondition(expression).CountAsync();
+            
         }
         catch (Exception e)
         {
             _logger.LogError($"QueryStoreHouseAsync error: {e.Message}");
             throw;
         }
+
+        return response;
     }
+    
 }

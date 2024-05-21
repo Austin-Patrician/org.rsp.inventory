@@ -1,17 +1,21 @@
 ﻿using org.rsp.database.Table;
+using org.rsp.entity.Model;
 using org.rsp.entity.Request;
+using org.rsp.entity.Response;
 
 namespace org.rsp.entity.service;
 
 public interface IGoodsManager
 {
-    Task<List<Goods>> QueryGoodsAsync();
+    Task<QueryGoodsResponse> QueryGoodsAsync(QueryGoodsRequest request);
 
     Task<bool> BatchDelGoodsAsync(List<int> ids);
 
-    Task<bool> UpdateGoodsAsync(UpdateGoodsRequest request);
+    Task UpdateGoodsAsync(UpdateGoodsRequest request);
     
     Task ExportGoodsAsync();
 
     Task AddGoodsAsync(AddGoodsRequest request);
+
+    Task<List<GoodsResponse>> QueryGoodsByStoreHouseIdAsync(QueryGoodsByStoreHouseIdRequest request);
 }

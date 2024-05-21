@@ -27,4 +27,7 @@ public class AddUserRequest: BaseFiled
     /// 邮箱地址
     /// </summary>
     public string Email { get; set; }
+
+    //给用户角色
+    public int[]? RoleList { get; set; }
 }

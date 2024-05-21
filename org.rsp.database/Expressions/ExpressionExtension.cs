@@ -1,6 +1,7 @@
 ﻿using System.Linq.Expressions;
+using org.rsp.database.Extensions;
 
-namespace org.rsp.database.Extensions;
+namespace org.rsp.database.Expressions;
 
 public static class ExpressionExtension
 {

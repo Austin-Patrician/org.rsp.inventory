@@ -12,8 +12,9 @@ public class UpdateStoreHouseRequest
     
     public string? Location { get; set; }
     
+    public string? Remark { get; set; }
+    
     [Required]
     public string UpdateBy { get; set; }
     
-    public DateTime UpdateTime { get; set; } = DateTime.Now;
 }

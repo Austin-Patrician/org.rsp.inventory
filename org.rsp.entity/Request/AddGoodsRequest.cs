@@ -4,9 +4,6 @@ public class AddGoodsRequest
 {
     public string GoodsName { get; set; }
     
-    //数量
-    public double Number { get; set; }
-    
     //哪个物品种类
     public int GoodsCategoryId { get; set; }
     
@@ -22,4 +19,6 @@ public class AddGoodsRequest
     //CreateBy
     
     public string CreateBy { get; set; }
+    
+    public string? Remark { get; set; }
 }

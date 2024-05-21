@@ -6,4 +6,5 @@ public class QueryAllRolesResponse
 {
     public List<RoleModel> RoleModels { get; set; } = new ();
 
+    public int TotalCount { get; set; }
 }

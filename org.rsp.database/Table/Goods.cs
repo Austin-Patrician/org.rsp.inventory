@@ -21,7 +21,7 @@ public class Goods : BaseTable
     //描述
     public string? Description { get; set; }
     
-    public StoreHouse StoreHouse { get; set; }
+    public virtual StoreHouse StoreHouse { get; set; }
     
-    public GoodsCategory GoodsCategory { get; set; }
+    public virtual GoodsCategory GoodsCategory { get; set; }
 }

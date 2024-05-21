@@ -2,6 +2,7 @@
 using org.rsp.database.Table;
 using org.rsp.entity.Model;
 using org.rsp.entity.Request;
+using org.rsp.entity.Response;
 
 namespace org.rsp.management.MapProfile;
 
@@ -23,6 +24,19 @@ public class InventoryMapperProfile : Profile
         CreateMap<RolePermission,RolePermissionModel>();
         CreateMap<AddUserRequest,User>();
         CreateMap<AddRoleRequest, Role>();
+        CreateMap<Goods, GoodsResponse>()
+            .ForMember(g=>g.GoodsCategoryName,
+            o=>o.MapFrom(s=>s.GoodsCategory.GoodsCategoryName))
+            .ForMember(g=>g.StoreHouseName,
+                o=>o.MapFrom(s=>s.StoreHouse.StoreHouseName));
+
+        CreateMap<Record, RecordModel>()
+            .ForMember(g => g.StoreHouseName,
+                o => o.MapFrom(s => s.StoreHouse.StoreHouseName))
+            .ForMember(g => g.GoodsName,
+                o => o.MapFrom(s => s.Goods.GoodsName));
+
+        CreateMap<AddWareHouseRecordRequest, Record>();
 
     }
 }

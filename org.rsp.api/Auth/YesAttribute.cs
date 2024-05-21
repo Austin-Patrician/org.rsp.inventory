@@ -30,10 +30,10 @@ public class YesAttribute: Attribute,IAuthorizationFilter
             return;
         }
         //拿到token
-        string userToken = context.HttpContext.Request.Headers["Token"].ToString(); //获取token
+        string userToken = context.HttpContext.Request.Headers["Authorization"].ToString(); //获取token
         if (string.IsNullOrEmpty(userToken))
         {
-            context.Result = new ContentResult() { StatusCode = 403, Content = "Headers no token,please check." };  //没有Cookie则跳转到登陆页面
+            context.Result = new ContentResult{ StatusCode = 403, Content = "Headers no token,please check." };  //没有Cookie则跳转到登陆页面
             return;
         }
         else
@@ -44,7 +44,7 @@ public class YesAttribute: Attribute,IAuthorizationFilter
             var roles =await jwtService!.AnalysisToken(userToken);
             if (! roles.Any())
             {
-                context.Result = new ContentResult() { StatusCode = 401, Content = "Please check the roles you owned." };
+                context.Result = new ContentResult{ StatusCode = 401, Content = "Please check the roles you owned." };
                 return;
             }
             //获取attribute的roles;
@@ -52,16 +52,15 @@ public class YesAttribute: Attribute,IAuthorizationFilter
             var attribute = methodInfo.GetCustomAttribute<YesAttribute>();
             if (attribute ==null)
             {
-                context.Result = new ContentResult() { StatusCode = 401, Content = "Please check the roles you owned." };   
+                context.Result = new ContentResult { StatusCode = 401, Content = "Please check the roles you owned." };
                 return;
             }
             
             var attributeRoles = attribute.Roles;
             var a = attributeRoles.Split(",").ToHashSet();
-            var of = roles.ToHashSet().IsSupersetOf(a);
-            if (!of)
+            if (! roles.ToHashSet().Intersect(a).Any())
             {
-                context.Result = new ContentResult() { StatusCode = 401, Content = "You don't have this role" };
+                context.Result = new ContentResult { StatusCode = 401, Content = "You don't have this role" };
             }
         }
        

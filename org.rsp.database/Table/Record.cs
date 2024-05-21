@@ -27,7 +27,11 @@ public class Record
     //用途：出库==》出库去向  入库==> 购买目的
     public string Use { get; set; }
     
-    public byte IsDeleted { get; set; }
+    public bool IsDeleted { get; set; }
     
-    public int WareHouseRecordId { get; set; }
+    public string? CreateBy { get; set; }
+    
+    //外键
+    public virtual Goods Goods { get; set; }
+    public virtual StoreHouse StoreHouse { get; set; }
 }

@@ -3,6 +3,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Npoi.Mapper;
+using org.rsp.database.Expressions;
 using org.rsp.database.Extensions;
 using org.rsp.database.Table;
 using org.rsp.entity.Request;
@@ -30,9 +31,43 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
     /// query all category
     /// </summary>
     /// <returns></returns>
-    public async Task<List<GoodsCategory>> QueryGoodsCategoryAsync()
+    public async Task<QueryGoodsCategoryResponse> QueryGoodsCategoryAsync(QueryGoodsCategoryRequest request)
     {
-        return await _wrapper.GoodsCategoryRepository.FindAll().ToListAsync();
+        var response = new QueryGoodsCategoryResponse();
+
+        try
+        {
+            Expression<Func<GoodsCategory, bool>> expression = ExpressionExtension.True<GoodsCategory>();
+
+            if (!string.IsNullOrEmpty(request.GoodsCategoryName))
+            {
+                expression = expression.And(p => string.Equals(p.GoodsCategoryName, request.GoodsCategoryName));
+            }
+
+            expression = expression.And(p => p.IsDeleted == false);
+
+
+            var goodsCategories = await _wrapper.GoodsCategoryRepository.FindByCondition(expression)
+                .OrderByDescending(_ => _.UpdateTime)
+                .Skip((request.PageNumber - 1) * request.PageSize)
+                .Take(request.PageSize)
+                .ToListAsync();
+
+
+            if (goodsCategories.Any())
+            {
+                response.GoodsCategories = goodsCategories;
+            }
+
+            response.TotalCount = await _wrapper.GoodsCategoryRepository.FindByCondition(expression).CountAsync();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"QueryGoodsCategoryAsync error: {e.Message}");
+            throw;
+        }
+
+        return response;
     }
 
     /// <summary>
@@ -88,22 +123,41 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
     {
         try
         {
-            var entity = await _wrapper.GoodsCategoryRepository
+            var goodsCategory = await _wrapper.GoodsCategoryRepository
                 .FindByCondition(_ => _.GoodsCategoryId == request.GoodCategoryId)
                 .FirstOrDefaultAsync();
-            
-            //need to check if image change.
-            if (!string.IsNullOrEmpty(request.Description))
+
+            if (goodsCategory is null)
             {
-                entity!.Description=request.Description;
+                return;
             }
 
-            if (!string.IsNullOrEmpty(request.GoodsCategoryName))
+            if (!string.IsNullOrEmpty(request.GoodsCategoryName) &&
+                !string.Equals(request.GoodsCategoryName, goodsCategory.GoodsCategoryName))
             {
-                entity!.GoodsCategoryName = request.GoodsCategoryName;
+                var count = await _wrapper.GoodsCategoryRepository
+                    .FindByCondition(_ => _.GoodsCategoryName == request.GoodsCategoryName).CountAsync();
+                if (count > 0)
+                {
+                    //make sure not duplicate name.
+                    return;
+                }
+                goodsCategory.GoodsCategoryName = request.GoodsCategoryName;
             }
-            
-            _wrapper.GoodsCategoryRepository.Update(entity);
+
+            if (!string.Equals(request.Description, goodsCategory.Description))
+            {
+                goodsCategory.Description = request.Description;
+            }
+
+            if (!string.Equals(request.Remark, goodsCategory.Remark))
+            {
+                goodsCategory.Remark = request.Remark;
+            }
+
+            goodsCategory.UpdateBy = request.UpdateBy;
+            goodsCategory.UpdateTime = DateTime.UtcNow;
+            _wrapper.GoodsCategoryRepository.Update(goodsCategory);
 
             await _wrapper.SaveChangeAsync();
         }
@@ -127,8 +181,10 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
         if (goods is not null)
             return;
 
+        request.UpdateBy = request.CreateBy;
+
         var goodsCategory = _mapper.Map<GoodsCategory>(request);
-        
+
         //TODO:Upload image，set image Id.
         _wrapper.GoodsCategoryRepository.Create(goodsCategory);
         await _wrapper.SaveChangeAsync();
@@ -188,7 +244,7 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
     /// </summary>
     public async Task ExportGoodsCategory()
     {
-        var allGoodsCategory = await QueryGoodsCategoryAsync();
+        var allGoodsCategory = await QueryGoodsCategoryAsync(new QueryGoodsCategoryRequest());
         await Task.Run(() =>
         {
             string date = DateTime.Now.ToShortDateString();
@@ -196,7 +252,8 @@ public class GoodsCategoryManager : IGoodsCategoryManager, ITransient
             var mapper = new Mapper();
             mapper.Map<GoodsCategory>("更新日期", s => s.UpdateTime).Format<GoodsCategory>("yyyy-MM-dd", s => s.UpdateTime);
 
-            mapper.Save($"C:\\download\\category_{date}.xlsx", allGoodsCategory, "Goods_Category", true, xlsx: true);
+            mapper.Save($"C:\\download\\category_{date}.xlsx", allGoodsCategory.GoodsCategories, "Goods_Category", true,
+                xlsx: true);
         });
     }
 }

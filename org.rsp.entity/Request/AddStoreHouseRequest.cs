@@ -1,12 +1,12 @@
-﻿namespace org.rsp.entity.Request;
+﻿using org.rsp.entity.Common;
 
-public class AddStoreHouseRequest
+namespace org.rsp.entity.Request;
+
+public class AddStoreHouseRequest : BaseFiled
 {
     public string StoreHouseName { get; set; }
     
-    public string Description { get; set; }
+    public string? Description { get; set; }
     
     public string Location { get; set; }
-    
-    public string CreateBy { get; set; }
 }

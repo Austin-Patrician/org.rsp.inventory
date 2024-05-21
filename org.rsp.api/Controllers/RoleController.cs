@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using org.rsp.api.Auth;
 using org.rsp.entity.Request;
 using org.rsp.entity.Response;
 using org.rsp.entity.service;
@@ -22,13 +23,14 @@ public class RoleController
     
     
     [HttpPost]
+    [Yes(Roles = "Administrator,Regular")]
     public async Task<QueryAllRolesResponse> QueryAllRoles(QueryAllRolesRequest request)
     {
         try
         {
             return await _manager.QueryAllRolesAsync(request);
         }
-        catch (Exception e)
+        catch (Exception _)
         {
             _logger.LogError(
                 $"Error in org.huage.Service.RoleController.RoleController.QueryAllRoles.");
@@ -36,16 +38,64 @@ public class RoleController
         }
     }
     
+    [HttpPost]
+    [Yes(Roles = "Administrator")]
+    public async Task<QueryAllRolesResponse> QueryUserNotHasRole(QueryUserNotHasRoleRequest request)
+    {
+        try
+        {
+            return await _manager.QueryUserNotHasRoleAsync(request);
+        }
+        catch (Exception _)
+        {
+            _logger.LogError(
+                $"Error in org.huage.Service.RoleController.RoleController.QueryUserNotHasRole.");
+            throw ;
+        }
+    }
     
     [HttpPost]
-    [AllowAnonymous]
+    [Yes(Roles = "Administrator")]
+    public async Task<QueryAllRolesResponse> QueryUserHasRole(QueryUserNotHasRoleRequest request)
+    {
+        try
+        {
+            return await _manager.QueryUserHaveRoleAsync(request);
+        }
+        catch (Exception _)
+        {
+            _logger.LogError(
+                $"Error in org.huage.Service.RoleController.RoleController.QueryUserHasRole.");
+            throw ;
+        }
+    }
+
+    [HttpPost]
+    [Yes(Roles = "Administrator")]
+    public async Task UpdateRole(UpdateRoleRequest request)
+    {
+        try
+        {
+            await _manager.UpdateRoleAsync(request);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(
+                $"Error in org.huage.Service.RoleController.RoleController.UpdateRole.");
+            throw;
+        }
+    }
+    
+    
+    [HttpPost]
+    [Yes(Roles = "Administrator")]
     public async Task AddRole(AddRoleRequest request)
     {
         try
         {
             await _manager.AddRoleAsync(request);
         }
-        catch (Exception e)
+        catch (Exception _)
         {
             _logger.LogError(
                 $"Error in org.huage.Service.RoleController.RoleController.AddRole.");
@@ -53,4 +103,20 @@ public class RoleController
         }
     }
     
+    
+    [HttpPost]
+    [Yes(Roles = "Administrator")]
+    public async Task BatchDeleteRole(List<int> ids)
+    {
+        try
+        {
+            await _manager.BatchDeleteRoleAsync(ids);
+        }
+        catch (Exception _)
+        {
+            _logger.LogError(
+                $"Error in org.huage.Service.RoleController.RoleController.BatchDeleteRole.");
+            throw ;
+        }
+    }
 }

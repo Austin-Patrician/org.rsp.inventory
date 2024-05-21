@@ -4,7 +4,7 @@ namespace org.rsp.entity.Helper;
 
 public class MyRedis<TKey, TValue> where TKey : notnull
 {
-    private static readonly ConcurrentDictionary<TKey, (TValue, Timer)> Store =new ();
+    private static readonly ConcurrentDictionary<TKey, (TValue, Timer?)> Store =new ();
 
     public async ValueTask SetAsync(TKey key, TValue value, TimeSpan? expiryTime)
     {
@@ -22,7 +22,10 @@ public class MyRedis<TKey, TValue> where TKey : notnull
             // 添加/更新键值对和定时器
             Store.AddOrUpdate(key, (value, timer), (_, tuple) =>
             {
-                tuple.Item2.Dispose(); // 先删除旧的定时器
+                if (tuple.Item2 is not null)
+                {
+                    tuple.Item2.Dispose(); // 先删除旧的定时器
+                }
                 return (value, timer);
             });
         }
@@ -53,7 +56,11 @@ public class MyRedis<TKey, TValue> where TKey : notnull
     {
         if (Store.TryRemove(key, out var tuple))
         {
-            tuple.Item2.Dispose(); // 删除定时器
+            if (tuple.Item2 is not null)
+            {
+                tuple.Item2.Dispose();
+            }
+             // 删除定时器
             return true;
         }
 

@@ -9,4 +9,12 @@ public interface IRoleManager
     Task<QueryAllRolesResponse> QueryAllRolesAsync(QueryAllRolesRequest request);
 
     Task AddRoleAsync(AddRoleRequest request);
+
+    Task<QueryAllRolesResponse> QueryUserNotHasRoleAsync(QueryUserNotHasRoleRequest request);
+
+    Task UpdateRoleAsync(UpdateRoleRequest request);
+
+    Task BatchDeleteRoleAsync(List<int> ids);
+    
+    Task<QueryAllRolesResponse> QueryUserHaveRoleAsync(QueryUserNotHasRoleRequest request);
 }

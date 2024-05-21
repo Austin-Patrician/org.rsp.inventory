@@ -11,12 +11,10 @@ public class InventoryDbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Goods> Goods { get; set; }
     public DbSet<StoreHouse> StoreHouses { get; set; }
     public DbSet<Record> Records { get; set; }
-    public DbSet<WareHouseRecord> WareHouseRecord { get; set; }
-    
     //权限控制
     public DbSet<Role> Role { get; set; }
     public DbSet<User> User { get; set; }
-    public DbSet<Permission> Permission { get; set; }
+    //public DbSet<Permission> Permission { get; set; }
     public DbSet<UserRole> UserRole { get; set; }
     public DbSet<RolePermission> RolePermission { get; set; }
     public InventoryDbContext(DbContextOptions options) : base(options)
@@ -26,10 +24,6 @@ public class InventoryDbContext : Microsoft.EntityFrameworkCore.DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         //sql语句加全局过滤
-        modelBuilder.Entity<GoodsCategory>().HasQueryFilter(e => !e.IsDeleted);
-        modelBuilder.Entity<Goods>().HasQueryFilter(e => !e.IsDeleted);
-        modelBuilder.Entity<StoreHouse>().HasQueryFilter(e => !e.IsDeleted);
-        
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 }
